@@ -69,7 +69,7 @@ describe(requirements[7].description, () => {
 });
 
 describe(requirements[8].description, () => {
-  it("O avaliador deve executar o comando no arquivo 'command09.dc'", async () => {
+  it.only("O avaliador deve executar o comando no arquivo 'command09.dc'", async () => {
     const { stdout: result } = await readCommand(9);
     expect(result).not.toBeNull();
     expect(result).not.toContain('Error');
