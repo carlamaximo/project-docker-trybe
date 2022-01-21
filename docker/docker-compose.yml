@@ -6,14 +6,18 @@ services:
       - 3000:3000
     environment:
       - REACT_APP_API_HOST=todoback
+      depends_on:
+      - todoback
+
   todoback:
     image: todobackend
     ports: 
       - 3001:3001
+
   todotests:
     image: todotests
-    depends_on: 
-      - todofront
-      - todoback
     environment:
       - FRONT_HOST=frontend
+    depends_on: 
+      - todoback
+      - todofront
