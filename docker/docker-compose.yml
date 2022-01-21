@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 services:
   todofront:
     image: todofrontend
@@ -6,7 +6,7 @@ services:
       - 3000:3000
     environment:
       - REACT_APP_API_HOST=todoback
-      depends_on:
+    depends_on:
       - todoback
 
   todoback:
@@ -17,7 +17,7 @@ services:
   todotests:
     image: todotests
     environment:
-      - FRONT_HOST=frontend
+      - FRONT_HOST=todofront
     depends_on: 
       - todoback
       - todofront
